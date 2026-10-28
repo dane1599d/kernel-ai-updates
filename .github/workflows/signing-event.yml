@@ -29,7 +29,7 @@ jobs:
           permission-pull-requests: write
 
       - name: Signing event
-        # if: github.repository_owner == 'insert-owner-name-here' # avoid running in forks
+        if: github.repository_owner == 'dane1599d' # avoid running in forks
         uses: theupdateframework/tuf-on-ci/actions/signing-event@662382a8295b89a9d538390ce8b9bb85b207a93d # v0.21.0
         with:
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
